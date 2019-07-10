@@ -16,7 +16,7 @@ Clone the repository and build:
 ```
     mkdir -p ~/marmorf & cd ~/marmorf
     wstool init src
-    wstool merge -t https://raw.githubusercontent.com/MiiViiDynamics/marmorf/master/marmorf.rosinstall
+    wstool merge -t src https://raw.githubusercontent.com/MiiViiDynamics/marmorf/master/marmorf.rosinstall
     wstool update -t src
     cd ..
     catkin_make_isolated
