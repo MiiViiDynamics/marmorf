@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find marmorf)/launch/marmorf_core.launch" />
+    <!-- include file="$(find marmorf)/launch/bag_capture_localization.launch" /-->
+</launch>

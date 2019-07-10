@@ -1,0 +1,16 @@
+<launch>
+
+  <!--Start lidar node-->
+  <include file="$(find marmorf_sensing)/launch/lidar_robosense_16.launch" />
+  <include file="$(find marmorf_sensing)/launch/lidar_sick_tim551.launch" />
+
+  <!--Start IMU node-->
+  <include file="$(find marmorf_sensing)/launch/imu_atom_saber.launch" />
+
+
+
+  <!--Start record rosbag-->
+  <node name="recordbag" pkg="rosbag" type="record"
+      args=" /imu_sync /scan_sync /lidar_points_sync -o /home/nvidia/data/back_pack " />
+
+</launch>

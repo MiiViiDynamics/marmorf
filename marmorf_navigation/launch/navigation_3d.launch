@@ -1,0 +1,25 @@
+<launch>
+
+  <!--
+    Set default arguments here, or by command like:
+    roslaunch marmorf_localization navigation_3d.launch pcd_file:=<pfd_file_path> \
+           map_file:=<yaml_path> imu_topic:= <imu_topic> lidar_topic:=<lidar_topic>
+  -->
+  <arg name="pcd_file" default="$(env HOME)/map/3d_localization/map.pcd" />
+  <arg name="map_file" default="$(env HOME)/map/3d_localization/map.yaml" />
+  <arg name="imu_topic" default="/imu" />
+  <arg name="lidar_topic" default="/lidar_points" />
+
+  <include file="$(find marmorf_sensing)/launch/all.launch" />
+
+  <include file="$(find marmorf_description)/launch/description.launch" />
+
+  <include file="$(find marmorf_localization)/launch/hdl_localization.launch" >
+    <arg name="pcd_file" value="$(arg pcd_file)"/>
+    <arg name="map_file" value="$(arg map_file)"/>
+    <arg name="imu_topic" value="$(arg imu_topic)"/>
+    <arg name="lidar_topic" value="$(arg lidar_topic)"/>
+  </include>
+
+  <include file="$(find marmorf_navigation)/launch/move_base.launch" />
+</launch>

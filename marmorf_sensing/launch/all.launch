@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find marmorf_sensing)/launch/imu_sanchi_100d2.launch" />
+  <include file="$(find marmorf_sensing)/launch/lidar_velodyne_vlp16.launch" />
+  <include file="$(find marmorf_sensing)/launch/camera_gmsl.launch" />
+  <include file="$(find marmorf_sensing)/launch/chassis_agilex_scout.launch" />
+</launch>

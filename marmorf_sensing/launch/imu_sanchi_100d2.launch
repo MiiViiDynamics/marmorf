@@ -1,0 +1,61 @@
+<launch>
+  <arg name="razor_config_file" default="/opt/miivii/data/calibration/imu/sanchi_100d2.yaml"/>
+  <node pkg="razor_imu_9dof" type="imu_node_sanchi.py" name="imu_node_sanchi" output="screen">
+    <rosparam file="$(arg razor_config_file)" command="load"/>
+    <param name="~port" value="/dev/ttyTHS4"/>
+    <param name="~frame_id" value="imu_link"/>
+
+    <param name="~accel_x_min" value="-292.0"/>
+    <param name="~accel_x_max" value="270.0"/>
+    <param name="~accel_y_min" value="-277.0"/>
+    <param name="~accel_y_max" value="276.0"/>
+    <param name="~accel_z_min" value="-295.0"/>
+    <param name="~accel_z_max" value="212.0"/>
+
+    <param name="~magn_x_min" value="-600.0"/>
+    <param name="~magn_x_max" value="600.0"/>
+    <param name="~magn_y_min" value="-600.0"/>
+    <param name="~magn_y_max" value="600.0"/>
+    <param name="~magn_z_min" value="-600.0"/>
+    <param name="~magn_z_max" value="600.0"/>
+
+    <param name="~calibration_magn_use_extended" value="False"/>
+    <param name="~magn_ellipsoid_center" value="[0, 0, 0]"/>
+    <param name="~magn_ellipsoid_transform" value="[[0, 0, 0], [0, 0, 0], [0, 0, 0]]"/>
+
+    <param name="~imu_yaw_calibration" value="0.0"/>
+    <param name="~gyro_average_offset_x" value="-0.88"/>
+    <param name="~gyro_average_offset_y" value=" 31.70"/>
+    <param name="~gyro_average_offset_z" value="3.86"/>
+  </node>
+
+  <!--node pkg="razor_imu_9dof" type="imu_node.py" name="imu_node" output="screen">
+    <rosparam file="$(arg razor_config_file)" command="load"/>
+    <param name="~port" value="/dev/ttyUSB1"/>
+
+    <param name="~accel_x_min" value="-292.0"/>
+    <param name="~accel_x_max" value="270.0"/>
+    <param name="~accel_y_min" value="-277.0"/>
+    <param name="~accel_y_max" value="276.0"/>
+    <param name="~accel_z_min" value="-295.0"/>
+    <param name="~accel_z_max" value="212.0"/>
+
+    <param name="~magn_x_min" value="-600.0"/>
+    <param name="~magn_x_max" value="600.0"/>
+    <param name="~magn_y_min" value="-600.0"/>
+    <param name="~magn_y_max" value="600.0"/>
+    <param name="~magn_z_min" value="-600.0"/>
+    <param name="~magn_z_max" value="600.0"/>
+
+    <param name="~calibration_magn_use_extended" value="False"/>
+    <param name="~magn_ellipsoid_center" value="[0, 0, 0]"/>
+    <param name="~magn_ellipsoid_transform" value="[[0, 0, 0], [0, 0, 0], [0, 0, 0]]"/>
+
+    <param name="~imu_yaw_calibration" value="0.0"/>
+    <param name="~gyro_average_offset_x" value="4.11"/>
+    <param name="~gyro_average_offset_y" value=" 28.91"/>
+    <param name="~gyro_average_offset_z" value="2.90"/>
+  </node-->
+
+  <!--node pkg="tf" type="static_transform_publisher" name="base_link_tfto_imu" args="0.0 0.30 0.30 0 0 0 /base_link /base_imu_link 20" /-->
+</launch>

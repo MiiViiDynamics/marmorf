@@ -1,0 +1,27 @@
+<launch>
+  <!--Start lidar node-->
+  <include file="$(find marmorf_sensing)/launch/lidar_velodyne_vlp16.launch" />
+
+  <!--Start IMU node-->
+  <include file="$(find marmorf_sensing)/launch/imu_sanchi_100d2.launch" />
+
+  <!--Start camera node-->
+  <include file="$(find marmorf_sensing)/launch/camera_gmsl_front.launch" />
+
+  <!--Camera topics skip frame by topic tool throttle-->
+  <node name="throttle_image1" pkg="topic_tools" type="throttle"
+      args=" messages /miivii_gmsl_camera_front_node/image_gmsl_raw0 1.0" />
+  <node name="throttle_image2" pkg="topic_tools" type="throttle"
+      args=" messages /miivii_gmsl_camera_front_node/image_gmsl_raw1 1.0" />
+  <node name="throttle_image3" pkg="topic_tools" type="throttle"
+      args=" messages /miivii_gmsl_camera_front_node/image_gmsl_raw2 1.0" />
+
+  <!--Start record rosbag-->
+  <node name="recordbag" pkg="rosbag" type="record"
+      args=" /imu /lidar_points_sync
+             /miivii_gmsl_camera_front_node/image_gmsl_raw0_throttle
+             /miivii_gmsl_camera_front_node/image_gmsl_raw1_throttle
+             /miivii_gmsl_camera_front_node/image_gmsl_raw2_throttle
+             -o /home/nvidia/data/back_pack " />
+
+</launch>

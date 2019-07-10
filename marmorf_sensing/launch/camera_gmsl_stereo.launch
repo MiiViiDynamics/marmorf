@@ -1,0 +1,24 @@
+<launch>
+  <node name="camera_stereo" pkg="miivii_gmsl_ros" type="miivii_gmsl_ros_node" output="screen" >
+    <param name="video_device" value="/dev/video1" />
+    <param name="image_width" value="1280" />
+    <param name="image_height" value="720" />
+    <param name="camCount" value="2" />
+    <param name="enable_sync" value="1" />
+    <param name="fps" value="10" />
+    <param name="domain" value="miivii_stereo/" />
+    <!--stereo left-->
+    <param name="camera1_topic" value="stereo/left/image_raw" />
+    <param name="camera1_name" value="stereo_left" />
+    <param name="camera1_info_topic" value="stereo/left/camera_info" />
+    <param name="camera1_cali_file" value="file:///opt/miivii/data/calibration/camera/stereo_left.yaml" />
+    <param name="camera1_frame_id" value="camera_stereo_left" />
+
+    <!--stereo right-->
+    <param name="camera2_topic" value="stereo/right/image_raw" />
+    <param name="camera2_name" value="stereo_right" />
+    <param name="camera2_info_topic" value="stereo/right/camera_info" />
+    <param name="camera2_cali_file" value="file:///opt/miivii/data/calibration/camera/stereo_right.yaml" />
+    <param name="camera2_frame_id" value="camera_stereo_right" />
+  </node>
+</launch>

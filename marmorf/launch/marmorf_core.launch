@@ -1,0 +1,12 @@
+<launch>
+    <include file="$(find marmorf_localization)/launch/all.launch" />
+
+    <include file="$(find marmorf_navigation)/launch/all.launch" />
+
+    <include file="$(find marmorf_sensing)/launch/all.launch" />
+
+    <include file="$(find marmorf_control)/launch/all.launch" />
+
+    <include file="$(find marmorf_description)/launch/description.launch" />
+
+</launch>

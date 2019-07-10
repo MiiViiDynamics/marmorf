@@ -1,0 +1,38 @@
+<launch>
+  <node name="camera_perception" pkg="miivii_gmsl_ros" type="miivii_gmsl_ros_node" output="screen" >
+    <param name="video_device" value="/dev/video0" />
+    <param name="image_width" value="1280" />
+    <param name="image_height" value="720" />
+    <param name="camCount" value="4" />
+    <param name="enable_sync" value="1" />
+    <param name="fps" value="10" />
+    <param name="domain" value="" />
+    <!--perception front-->
+    <param name="camera1_topic" value="perception/front/image_raw" />
+    <param name="camera1_name" value="perception_front" />
+    <param name="camera1_info_topic" value="perception/front/camera_info" />
+    <param name="camera1_cali_file" value="file:///opt/miivii/data/calibration/camera/perception_front.yaml" />
+    <param name="camera1_frame_id" value="camera_perception_front" />
+
+    <!--perception left-->
+    <param name="camera2_topic" value="perception/left/image_raw" />
+    <param name="camera2_name" value="perception_left" />
+    <param name="camera2_info_topic" value="perception/left/camera_info" />
+    <param name="camera2_cali_file" value="file:///opt/miivii/data/calibration/camera/perception_left.yaml" />
+    <param name="camera2_frame_id" value="camera_perception_left" />
+
+    <!--perception right-->
+    <param name="camera3_topic" value="perception/right/image_raw" />
+    <param name="camera3_name" value="perception_right" />
+    <param name="camera3_info_topic" value="perception/right/camera_info" />
+    <param name="camera3_cali_file" value="file:///opt/miivii/data/calibration/camera/perception_right.yaml" />
+    <param name="camera3_frame_id" value="camera_perception_right" />
+
+    <!--perception-->
+    <param name="camera4_topic" value="perception/rear/image_raw" />
+    <param name="camera4_name" value="perception_rear" />
+    <param name="camera4_info_topic" value="perception/rear/camera_info" />
+    <param name="camera4_cali_file" value="file:///opt/miivii/data/calibration/camera/perception_rear.yaml" />
+    <param name="camera4_frame_id" value="camera_rear" />
+  </node>
+</launch>

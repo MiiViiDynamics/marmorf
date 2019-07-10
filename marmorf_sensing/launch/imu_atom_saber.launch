@@ -1,0 +1,9 @@
+<launch>
+    <node name="atom_imu" pkg="atom_imu" type="atom_imu" output="screen">
+        <param name="pub_sync_time_topic" value="true" />
+        <param name="pub_ros_time_topic" value="true" />
+        <param name="port_name" value="/dev/ttyTHS1" />
+        <param name="baud_rate" value="115200" />
+        <param name="frame_id" value="imu_link" />
+    </node>
+</launch>

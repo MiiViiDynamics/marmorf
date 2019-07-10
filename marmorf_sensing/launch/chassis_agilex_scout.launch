@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="agilex_scout" type="agilex_scout" name="agilex_scout_node" output="screen">
+  <remap from="odom" to="agilex_odom"/>
+  </node>
+</launch>

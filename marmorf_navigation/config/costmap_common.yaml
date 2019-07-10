@@ -1,0 +1,26 @@
+footprint: [[-0.5, -0.37], [-0.5, 0.37], [0.5, 0.37], [0.5, -0.37]]  #978*728mm
+footprint_padding: 0.1
+#robot_radius: 0.3
+
+robot_base_frame: base_link
+update_frequency: 5.0
+publish_frequency: 5.0
+transform_tolerance: 0.2
+
+resolution: 0.05
+
+obstacle_range: 3.0
+raytrace_range: 3.5
+
+#layer definitions
+static:
+    map_topic: /map
+    subscribe_to_updates: true
+
+obstacles_laser:
+    observation_sources: laser laser_3d
+    laser: {data_type: LaserScan, clearing: true, marking: true, topic: scan, inf_is_valid: true}
+    laser_3d: {data_type: PointCloud2, clearing: true, marking: true, topic: lidar_points, min_obstacle_height: 0.2, max_obstacle_height: 1.7, observation_persistence: 0.2}
+
+inflation:
+    inflation_radius: 0.6

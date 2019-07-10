@@ -1,0 +1,36 @@
+- git: {local-name: src/marmorf, uri: 'https://github.com/MiiViiDynamics/marmorf.git',
+    version: master}
+
+# PERCEPTION
+- git: {local-name: src/computing/perception/detection/miivii_fusion, uri: 'https://github.com/MiiViiDynamics/miivii_fusion.git',
+    version: master}
+- git: {local-name: src/computing/perception/detection/miivii_detector, uri: 'https://github.com/MiiViiDynamics/miivii_detector.git',
+    version: master}
+
+# MSG
+- git: {local-name: src/msgs/miivii_msgs, uri: 'https://github.com/MiiViiDynamics/miivii_msgs.git',
+    version: master}
+
+# VISION
+
+# localization
+- git: {local-name: src/computing/localization/cartographer, uri: 'https://github.com/googlecartographer/cartographer.git ',
+    version: 1.0.0}
+- git: {local-name: src/computing/localization/cartographer_ros, uri: 'https://github.com/googlecartographer/cartographer_ros.git',
+    version: 1.0.0}
+- git: {local-name: src/computing/localization/ceres-solver, uri: 'https://github.com/ceres-solver/ceres-solver.git',
+    version: 1.13.0}
+- git: {local-name: src/computing/localization/ndt_omp, uri: 'https://github.com/koide3/ndt_omp.git',
+    version: e956da12d928340a995718eafe2ea003ce6f678b}
+- git: {local-name: src/computing/localization/hdl_localization, uri: 'https://github.com/MiiViiDynamics/hdl_localization.git',
+    version: master}
+
+# sensing
+- git: {local-name: src/sensing/drivers/camera/miivii_gmsl_camera, uri: 'https://github.com/MiiViiDynamics/miivii_gmsl_camera.git',
+    version: master}
+- git: {local-name: src/sensing/drivers/chassis/agilex_scout, uri: 'https://github.com/MiiViiDynamics/agilex_scout.git',
+    version: master}
+- git: {local-name: src/sensing/drivers/lidar/velodyne, uri: 'https://github.com/MiiViiDynamics/velodyne.git',
+    version: miivii-sync}
+- git: {local-name: src/sensing/drivers/imu/sanchi, uri: 'https://github.com/MiiViiDynamics/razor_imu_9dof.git',
+    version: miivii}

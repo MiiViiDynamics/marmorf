@@ -1,0 +1,18 @@
+<launch>
+
+  <!-- Start a nodelet manager; the name must be unqualified here -->
+  <node pkg="nodelet" type="nodelet" name="pipeline" args="manager" />
+
+<node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc_front" output="screen" ns = "/camera_stereo/miivii_stereo/stereo/">
+    <param name="prefilter_size" type="int" value="9"/>
+    <param name="prefilter_cap" type="int" value="31"/>
+    <param name="correlation_window_size" type="int" value="15"/>
+    <param name="min_disparity" type="int" value="-128"/>
+    <param name="disparity_range" type="int" value="128"/>
+    <param name="uniqueness_ratio" type="int" value="10"/>
+    <param name="texture_threshold" type="int" value="2"/>
+    <param name="speckle_size" type="int" value="1000"/>
+    <param name="speckle_range" type="int" value="4"/>
+</node>
+
+</launch>

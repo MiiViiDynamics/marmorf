@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>marmorf_vision</name>
+  <version>0.2.7</version>
+  <description>Launch vision related launch file for marmorf</description>
+
+  <author email="juns@miivii.com">Jun Su</author>
+  <maintainer email="juns@miivii.com">Jun Su</maintainer>
+  <url type="website">http://www.miivii.com</url>
+
+  <license>BSD</license>
+
+  <url type="website">http://www.miivii.com</url>
+  <url type="bugtracker">https://github.com/MiiViiDynamics/marmorf/issues</url>
+  <url type="repository">https://github.com/MiiViiDynamics/marmorf</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
+
+  <export>
+  </export>
+</package>

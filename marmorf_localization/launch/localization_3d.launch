@@ -1,0 +1,43 @@
+<!--
+  Copyright 2016 The Cartographer Authors
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<launch>
+
+  <!--
+    Set default arguments here, or by command like:
+    roslaunch marmorf_localization localization_3d.launch pcd_file:=<pfd_file_path> \
+           map_file:=<yaml_path> imu_topic:= <imu_topic> lidar_topic:=<lidar_topic>
+  -->
+  <arg name="pcd_file" default="$(env HOME)/map/3d_localization/map.pcd" />
+  <arg name="map_file" default="$(env HOME)/map/3d_localization/map.yaml" />
+  <arg name="imu_topic" default="/imu" />
+  <arg name="lidar_topic" default="/lidar_points" />
+
+  <!-- Start sensors -->
+  <include file="$(find marmorf_sensing)/launch/all.launch" />
+
+  <!-- Publish tf -->
+  <include file="$(find marmorf_description)/launch/description.launch" />
+
+  <!-- Start hdl_localization node -->
+  <include file="$(find marmorf_localization)/launch/hdl_localization.launch" >
+    <arg name="pcd_file" value="$(arg pcd_file)"/>
+    <arg name="map_file" value="$(arg map_file)"/>
+    <arg name="imu_topic" value="$(arg imu_topic)"/>
+    <arg name="lidar_topic" value="$(arg lidar_topic)"/>
+  </include>
+
+</launch>

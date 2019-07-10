@@ -1,0 +1,13 @@
+<launch>
+  <arg name="map_file" default="$(env HOME)/map/2d_localization/map.yaml" />
+
+  <include file="$(find marmorf_sensing)/launch/all.launch" />
+
+  <include file="$(find marmorf_description)/launch/description.launch" />
+
+  <include file="$(find marmorf_localization)/launch/amcl_with_map.launch" >
+    <arg name="map_file" value="$(arg map_file)"/>
+  </include>
+
+  <include file="$(find marmorf_navigation)/launch/move_base.launch" />
+</launch>

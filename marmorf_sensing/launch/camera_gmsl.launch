@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find marmorf_sensing)/launch/camera_gmsl_stereo.launch" />
+
+  <include file="$(find marmorf_sensing)/launch/camera_gmsl_perception.launch" />
+</launch>

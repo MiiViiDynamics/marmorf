@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<robot name="marmorf_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Included URDF/XACRO Files -->
+  <xacro:include filename="$(find marmorf_description)/urdf/decorations.urdf.xacro" />
+  <xacro:include filename="$(find marmorf_description)/urdf/wheel.urdf.xacro" />
+
+  <xacro:include filename="$(find marmorf_description)/urdf/accessories/kinect_camera.urdf.xacro"/>
+
+  <xacro:property name="M_PI" value="3.14159"/>
+
+  <!-- Base Size -->
+  <xacro:property name="base_x_size" value="0.98740000" />
+  <xacro:property name="base_y_size" value="0.57090000" />
+  <xacro:property name="base_z_size" value="0.24750000" />
+  <xacro:property name="base_radius" value="0.6" />
+  <xacro:property name="base_height" value="0.6" />
+
+  <!-- Wheel Mounting Positions -->
+  <xacro:property name="wheelbase" value="0.5120" />
+  <xacro:property name="track" value="0.5708" />
+  <xacro:property name="wheel_vertical_offset" value="0.03282" />
+
+  <!-- Wheel Properties -->
+  <xacro:property name="wheel_length" value="0.1143" />
+  <xacro:property name="wheel_radius" value="0.17775" />
+
+  <xacro:macro name="marmorf_robot">
+
+    <!-- Base link is the center of the robot's bottom plate -->
+    <link name="base_link">
+    </link>
+
+    <!-- Base footprint is on the ground under the robot -->
+    <link name="base_footprint"/>
+    <joint name="base_footprint_joint" type="fixed">
+      <origin xyz="0 0 ${wheel_vertical_offset - wheel_radius}" rpy="0 0 0" />
+      <parent link="base_link" />
+      <child link="base_footprint" />
+    </joint>
+
+    <!-- marmorf_link is a frame fixed on the expansion slot of base_link -->
+    <link name="marmorf_link" />
+    <joint name="marmorf_joint" type="fixed">
+      <origin xyz="0.179 0 0.206" rpy="0 0 0" />
+      <parent link="base_link" />
+      <child link="marmorf_link" />
+    </joint>
+
+    <!-- IMU Link is the standard mounting position for the UM6 IMU.-->
+    <!-- Can be modified with environment variables in /etc/ros/setup.bash -->
+    <link name="imu_link"/>
+    <joint name="imu_joint" type="fixed">
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+      <parent link="marmorf_link" />
+      <child link="imu_link" />
+    </joint>
+
+    <link name="lidar_3d"/>
+    <joint name="lidar_3d_joint" type="fixed">
+      <origin xyz="0.0 0.0 0.593" rpy="0 0 0" />
+      <parent link="marmorf_link" />
+      <child link="lidar_3d" />
+    </joint>
+
+    <link name="lidar_2d"/>
+    <joint name="laser_joint" type="fixed">
+      <origin xyz="0.14 0 0.0" rpy="0 0 0" />
+      <parent link="marmorf_link" />
+      <child link="lidar_2d" />
+    </joint>
+
+    <!-- stereo cameras -->
+    <link name="camera_stereo_left"/>
+    <joint name="camera_stereo_left_joint" type="fixed">
+      <origin xyz="0.145 0.06 0.415" rpy="-1.57 0 -1.57" />
+      <parent link="marmorf_link" />
+      <child link="camera_stereo_left" />
+    </joint>
+
+    <link name="camera_stereo_right"/>
+    <joint name="camera_stereo_right_joint" type="fixed">
+      <origin xyz="0.145 -0.06 0.415" rpy="-1.57 0 -1.57" />
+      <parent link="marmorf_link" />
+      <child link="camera_stereo_right" />
+    </joint>
+
+    <!-- perception cameras -->
+    <link name="camera_perception_front"/>
+    <joint name="camera_perception_front" type="fixed">
+      <origin xyz="0.1 0 0.523" rpy="-1.57 0 -1.57" />
+      <parent link="marmorf_link" />
+      <child link="camera_perception_front" />
+    </joint>
+
+    <link name="camera_perception_left"/>
+    <joint name="camera_perception_left_joint" type="fixed">
+      <origin xyz="0.0 0.1 0.523" rpy="-1.57 0 0" />
+      <parent link="marmorf_link" />
+      <child link="camera_perception_left" />
+    </joint>
+
+    <link name="camera_perception_right"/>
+    <joint name="camera_perception_right_joint" type="fixed">
+      <origin xyz="0.0 -0.1 0.523" rpy="1.57 -3.14 0" />
+      <parent link="marmorf_link" />
+      <child link="camera_perception_right" />
+    </joint>
+
+    <link name="camera_rear"/>
+    <joint name="camera_rear_joint" type="fixed">
+      <origin xyz="-0.1 0 0.523" rpy="-1.57 0 1.57" />
+      <parent link="marmorf_link" />
+      <child link="camera_rear" />
+    </joint>
+
+  </xacro:macro>
+
+</robot>

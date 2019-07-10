@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="marmorf_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:arg name="laser_enabled" default="false" />
+  <xacro:arg name="ur5_enabled" default="false" />
+  <xacro:arg name="kinect_enabled" default="false" />
+
+  <xacro:include filename="$(find marmorf_description)/urdf/marmorf.urdf.xacro" />
+  <xacro:marmorf_robot />
+
+</robot>
