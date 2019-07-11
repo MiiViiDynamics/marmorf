@@ -20,8 +20,8 @@
     version: 1.0.0}
 - git: {local-name: computing/localization/ceres-solver, uri: 'https://github.com/ceres-solver/ceres-solver.git',
     version: 1.13.0}
-- git: {local-name: computing/localization/ndt_omp, uri: 'https://github.com/koide3/ndt_omp.git',
-    version: e956da12d928340a995718eafe2ea003ce6f678b}
+- git: {local-name: computing/localization/ndt_omp, uri: 'https://github.com/MiiViiDynamics/ndt_omp.git',
+    version: master}
 - git: {local-name: computing/localization/hdl_localization, uri: 'https://github.com/MiiViiDynamics/hdl_localization.git',
     version: master}
 
