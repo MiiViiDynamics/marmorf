@@ -20,37 +20,13 @@
     <param name="camera3_cali_file" value="/opt/miivii/data/calibration/camera_lidar/perception_right.yaml" />
 
 
-    <param name="lidar_topic" value="/lidar_3d" />
+    <param name="lidar_topic" value="/lidar_points" />
     <param name="visualize_fusion" value="false" /><!-- param, show fusion results window -->
 
-    <!-- param, object shape -->
-    <!--
-    <param name="points_clounds_in_image_and_yolo_detect" value="/detection/lidar_detector/points_clounds_cluster_in_image_and_yolo_detect" />
-    -->
-
-    <param name="detected_objects_topic" value="/detection/lidar_detector/objects" />
     <param name="bounding_boxes_topic" value="/detection/lidar_detector/bounding_boxes" />
-    <param name="points_clounds_detect_cluster_topic" value="/detection/fusion_detector/points_clounds_cluster_in_image_and_yolo_detect" />
-    <param name="centroid_topic" value="/detection/lidar_detector/cluster_centroids" />
-
-    <param name="downsample_cloud" value="false"/>
-    <param name="leaf_size" value="0.1"/>
-    <param name="cluster_size_min" value="3"/>
-    <param name="cluster_size_max" value="100000"/>
-    <param name="use_diffnormals" value="false"/>
     <param name="pose_estimation" value="true"/>
-    <param name="clip_min_height" value="-1.3"/>
-    <param name="clip_max_height" value="0.5"/>
-    <param name="overlap_threshold" value="0.55"/>
-    <param name="max_boundingbox_side" value="10"/>
-    <param name="output_frame" value="lidar_3d"/>
-    <param name="remove_points_upto" value="0.0"/>
-    <param name="clustering_distance" value="0.07"/><!--0.07是7cm-->
-    <param name="cluster_merge_threshold" value="0.3"/>
     <param name="use_gpu" value="false"/>
-    <!--    <param name="use_multiple_thres" value="false"/> -->
-    <param name="clustering_ranges" value="[15,30,45,60]"/><!-- Distances to segment pointcloud -->
-    <param name="clustering_distances"  value="[0.2,1.1,1.6,2.1,2.6]"/><!-- Euclidean Clustering threshold distance for each segment -->
+    <param name="debug_time" value="false" />
   </node>
 
 </launch>

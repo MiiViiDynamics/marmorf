@@ -12,3 +12,5 @@ rosbag filter $BAG_FILE $TARGET_BAG "topic =='/imu'  or topic =='/lidar_points' 
 roslaunch marmorf_localization cartographer3d_map_create.launch bag_filenames:=$TARGET_BAG imu_topic:=/imu lidar_topic:=/lidar_points
 #generate map
 roslaunch marmorf_localization assets_writer_miivii_3d.launch bag_filenames:=$TARGET_BAG pose_graph_filename:=$TARGET_BAG.pbstream
+#remove the absolute path of yaml
+sh fix_yaml_path.sh $TARGET_BAG
