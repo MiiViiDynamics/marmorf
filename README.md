@@ -18,7 +18,6 @@ Clone the repository and build:
     wstool init src
     wstool merge -t src https://raw.githubusercontent.com/MiiViiDynamics/marmorf/master/marmorf.rosinstall
     wstool update -t src
-    cd ..
     catkin_make_isolated
     source devel_isolated/setup.bash
 ```
