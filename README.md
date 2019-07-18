@@ -12,6 +12,8 @@ Maximum 8 GMSL cameras could be installed on MArmorF. All of the GMSL cameras co
 </p>
 
 ## Compile
+### Please Note the full software stack can ONLY work on MiiVii Apex.
+### As professional hardware like gmsl cameras need private sdk, which is installed inside the Apex image.
 Clone the repository and build:
 ```
     mkdir -p ~/marmorf & cd ~/marmorf
