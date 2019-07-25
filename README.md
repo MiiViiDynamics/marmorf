@@ -37,7 +37,7 @@ Clone the repository and build:
 
 ## Sensor Coverage
 <p align="center">
-<img src="images/marmorf-coverage.png" width="600" >
+<img src="images/marmorf-coverage.png" width="800" >
 </p>
 
 ## Features
