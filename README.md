@@ -11,6 +11,9 @@ Maximum 8 GMSL cameras could be installed on MArmorF. All of the GMSL cameras co
 <img src="images/marmorf.png" width="800" >
 </p>
 
+## Demo Video
+
+
 ## Compile
 ### Please note the full software stack can only work on MiiVii Apex.
 ### As professional hardware like gmsl cameras need private sdk, which is installed inside the Apex image.
@@ -25,14 +28,17 @@ Clone the repository and build:
     source devel_isolated/setup.bash
 ```
 
-## Demo Video
-
 ## Synchronization Comparation
 ### see more result [here](docs/synchronization.md)
 | Sensor      | Jitter Compare<br/>not sync(red), MArmorF data(blue)     | Sensor      | Jitter Compare<br/>not sync(red), MArmorF data(blue)|
 | ----------  | :-----------:  | :-----------:  | :-----------:  |
 | IMU<br/>(need imu support)     | <img src="images/sync/imu_marmorf_vs_unsync.png" width="400">      |3d Lidar|<img src="images/sync/lidar_marmorf_vs_unsync.png" width="400">|
 | Camera<br/>     | <img src="images/sync/camera_marmorf_vs_unsync.png" width="400">      |||
+
+## Sensor Coverage
+<p align="center">
+<img src="images/marmorf-coverage.png" width="600" >
+</p>
 
 ## Features
 Please refer the manual for detail, some key features listed as below.

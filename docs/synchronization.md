@@ -2,7 +2,6 @@
 
 ## Compare with public dataset
 ### MArmorF vs EuRoCMAVDatase
-### We respect EuRoCMAVDatase whose data syncrhonize is better than MArmorF.
 | Sensor      | Jitter Compare<br/> EuRoCMAVDatase(red), MArmorF data(blue)     |
 | ----------  | :-----------:  |
 | IM    | <img src="../images/sync/imu_marmorf_vs_EuRoCMAVDatase.png" width="400">      |
