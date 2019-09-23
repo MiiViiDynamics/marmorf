@@ -16,14 +16,6 @@
 
 <launch>
 
-  <!--- Run camera -->
-  <include file="$(find marmorf_sensing)/launch/camera_gmsl_perception.launch" />
-  <!--- Run lidar -->
-  <include file="$(find marmorf_sensing)/launch/lidar_velodyne_vlp16.launch" />
-
-  <!--- Run Detector -->
-  <include file="$(find marmorf_perception)/launch/miivii_detector.launch" />
-  <!--- Run fusion node -->
-  <include file="$(find marmorf_perception)/launch/fusion_lidar_camera.launch" />
+  <include file="$(find fusion_unit_perception)/launch/all_profile_fusion_marmorf.launch" />
 
 </launch>

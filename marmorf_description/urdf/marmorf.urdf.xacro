@@ -51,7 +51,7 @@
     <!-- Can be modified with environment variables in /etc/ros/setup.bash -->
     <link name="imu_link"/>
     <joint name="imu_joint" type="fixed">
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 -1.57" />
       <parent link="marmorf_link" />
       <child link="imu_link" />
     </joint>

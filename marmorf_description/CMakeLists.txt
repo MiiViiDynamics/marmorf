@@ -10,6 +10,6 @@ catkin_add_env_hooks(50.marmorf_description
 roslaunch_add_file_check(launch)
 
 install(
-  DIRECTORY launch meshes urdf config
+  DIRECTORY launch urdf config
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

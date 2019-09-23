@@ -13,4 +13,4 @@ roslaunch marmorf_localization cartographer3d_map_create.launch bag_filenames:=$
 #generate map
 roslaunch marmorf_localization assets_writer_miivii_3d.launch bag_filenames:=$TARGET_BAG pose_graph_filename:=$TARGET_BAG.pbstream
 #remove the absolute path of yaml
-sh fix_yaml_path.sh $TARGET_BAG
+roslaunch marmorf_localization fix_yaml_path.launch bag_filenames:=$TARGET_BAG

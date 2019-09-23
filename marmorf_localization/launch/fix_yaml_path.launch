@@ -1,0 +1,4 @@
+<launch>
+  <node name="fix_yaml_path" pkg="marmorf_localization" type="fix_yaml_path.sh" output="screen"
+    args="$(arg bag_filenames)" required="true"/>
+</launch>

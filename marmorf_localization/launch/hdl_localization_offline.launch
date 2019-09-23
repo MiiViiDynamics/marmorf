@@ -53,4 +53,18 @@
   <node name="rviz" pkg="rviz" type="rviz" required="true" />
   <node name="playbag" pkg="rosbag" type="play"
       args="--clock $(arg bag_filename)"/>
+
+  <!-- node for handle velodyne raw packet-->
+  <!-- TODO if handle another we can add code like below, they can run together?-->
+  <node name="cloud_node" pkg="velodyne_pointcloud" type="cloud_node" required="true">
+      <param name="calibration" value="$(find velodyne_pointcloud)/params/VLP16db.yaml"/>
+      <remap from="velodyne_points" to="lidar_points"/>
+  </node>
+
+  <!-- node for draw trajectory on xray_xy png-->
+  <node name="draw_trajectory" pkg="draw_trajectory" type="draw_trajectory"  output="screen" required="true">
+      <param name="bag_filename" value="$(arg bag_filename)" />
+  </node>
+
+
 </launch>

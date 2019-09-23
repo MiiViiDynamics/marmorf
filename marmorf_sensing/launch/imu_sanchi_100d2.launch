@@ -1,7 +1,7 @@
 <launch>
   <arg name="razor_config_file" default="/opt/miivii/data/calibration/imu/sanchi_100d2.yaml"/>
   <node pkg="razor_imu_9dof" type="imu_node_sanchi.py" name="imu_node_sanchi" output="screen">
-    <rosparam file="$(arg razor_config_file)" command="load"/>
+    <param name="~calibration_file_path" value="$(arg razor_config_file)"/>
     <param name="~port" value="/dev/ttyTHS4"/>
     <param name="~frame_id" value="imu_link"/>
 

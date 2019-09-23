@@ -6,6 +6,7 @@
     <param name="device_ip" value="192.168.1.200"/>
     <!-- Set the Lidar data port on the PC side, default is 6699 -->
     <param name="port" value="6699"/>
+    <param name="frame_id" value="lidar_3d" />
   </node>
 
   <node  name="cloud_node" pkg="rslidar_pointcloud" type="cloud_node" output="screen" >
@@ -16,8 +17,7 @@
     <param name="time_mode" value="$(arg time_mode)" />
     <param name="pub_sync_time_topic" value="true" />
     <param name="pub_ros_time_topic" value="true" />
-    <param name="frame_id" value="lidar_3d" />
-    <remap from="rslidar_points" to="lidar_points" />
+    <remap from="rslidar_points_sync" to="lidar_points" />
   </node>
 
   <!--node name="rviz" pkg="rviz" type="rviz"  args="-d $(find rslidar_pointcloud)/rviz_cfg/rslidar.rviz" /-->

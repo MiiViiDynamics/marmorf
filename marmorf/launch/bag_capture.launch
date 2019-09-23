@@ -18,7 +18,8 @@
 
   <!--Start record rosbag-->
   <node name="recordbag" pkg="rosbag" type="record"
-      args=" /imu /lidar_points_sync
+      args=" -b 1024
+             /imu /lidar_points_sync
              /miivii_gmsl_camera_front_node/image_gmsl_raw0_throttle
              /miivii_gmsl_camera_front_node/image_gmsl_raw1_throttle
              /miivii_gmsl_camera_front_node/image_gmsl_raw2_throttle
