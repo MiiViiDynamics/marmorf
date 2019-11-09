@@ -3,9 +3,9 @@
 
 # PERCEPTION
 - git: {local-name: computing/perception/detection/miivii_fusion, uri: 'https://github.com/MiiViiDynamics/miivii_fusion.git',
-    version: master}
+    version: v2.0.0}
 - git: {local-name: computing/perception/detection/miivii_detector, uri: 'https://github.com/MiiViiDynamics/miivii_detector.git',
-    version: master}
+    version: v1.2.1}
 
 # MSG
 - git: {local-name: msgs/miivii_msgs, uri: 'https://github.com/MiiViiDynamics/miivii_msgs.git',
@@ -27,7 +27,7 @@
 
 # sensing
 - git: {local-name: sensing/drivers/camera/miivii_gmsl_camera, uri: 'https://github.com/MiiViiDynamics/miivii_gmsl_camera.git',
-    version: master}
+    version: v1.0.1}
 - git: {local-name: sensing/drivers/chassis/agilex_scout, uri: 'https://github.com/MiiViiDynamics/agilex_scout.git',
     version: master}
 - git: {local-name: sensing/drivers/lidar/velodyne, uri: 'https://github.com/MiiViiDynamics/velodyne.git',

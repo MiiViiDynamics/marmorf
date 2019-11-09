@@ -20,7 +20,8 @@ Maximum 8 GMSL cameras could be installed on MArmorF. All of the GMSL cameras co
 
 Clone the repository and build:
 ```
-    mkdir -p ~/marmorf & cd ~/marmorf
+    mkdir -p ~/marmorf
+    cd ~/marmorf
     wstool init src
     wstool merge -t src https://raw.githubusercontent.com/MiiViiDynamics/marmorf/master/marmorf.rosinstall
     wstool update -t src

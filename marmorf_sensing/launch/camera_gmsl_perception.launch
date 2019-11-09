@@ -5,7 +5,7 @@
     <param name="image_height" value="720" />
     <param name="camCount" value="4" />
     <param name="enable_sync" value="1" />
-    <param name="fps" value="10" />
+    <param name="fps" value="20" />
     <param name="domain" value="" />
     <!--perception front-->
     <param name="camera1_topic" value="perception/front/image_raw" />
